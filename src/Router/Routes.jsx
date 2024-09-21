@@ -5,6 +5,7 @@ import AppliedJobs from "../Pages/Page_AppliedJobs/AppliedJobs";
 import Blogs from "../Pages/Page_Blogs/Blogs";
 import Root from "../Layout/Root";
 import AllJobs from "../Pages/Page_AllJobs/AllJobs";
+import JobDetails from "../Pages/Page_AllJobs/JobDetials/JobDetails";
 
 
 
@@ -28,7 +29,13 @@ const router = createBrowserRouter([
                 element: <AllJobs />
             },
             {
+                path: "/jobs/:id",
+                loader: async () => fetch("allJobs.json").then(res => res.json()),
+                element: <JobDetails />
+            },
+            {
                 path: "/appliedJobs",
+                loader: async () => fetch("allJobs.json").then(res => res.json()),
                 element: <AppliedJobs />
             },
             {

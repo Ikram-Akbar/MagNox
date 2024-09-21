@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { FaMapMarkerAlt, FaDollarSign, FaBriefcase } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const FeaturedJob = ({ job }) => {
     return (
@@ -38,9 +39,11 @@ const FeaturedJob = ({ job }) => {
                 </div>
                 {/* Apply Button */}
                 <div className="flex justify-center">
-                    <button className="text-center mt-4 bg-gray-800 text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-700 transition">
-                        Apply Now
-                    </button>
+                    <Link to={`/jobs/${job.id}`}>
+                        <button className="text-center mt-4 bg-gray-800 text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-700 transition">
+                            View Details
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
